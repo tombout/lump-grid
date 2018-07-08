@@ -1,0 +1,39 @@
+@import "mixins";
+@import "node_modules/sass-mq/mq";
+
+$grid-columns: 12 !default;
+$breakpoint-min-widths: (
+        sm: 576px, // Small devices (landscape phones, 576px and up)
+        md: 768px, // Medium devices (tablets, 768px and up)
+        lg: 992px, // Large devices (desktops, 992px and up)
+) !default;
+
+/* Grid classes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+}
+
+[class*="col"] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+}
+
+@include create-equal-width-column();
+
+@include create-auto-width-column();
+
+@include create-numbered-columns($grid-columns);
+
+// Write Media Queries
+@each $infix, $min-width in $breakpoint-min-widths {
+  @include mq($min-width) {
+    @include create-equal-width-column($infix);
+    @include create-auto-width-column($infix);
+    @include create-numbered-columns($grid-columns, $infix);
+  }
+}
