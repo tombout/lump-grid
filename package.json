@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/tombout/lump-grid/issues"
   },
-  "homepage": "https://github.com/tombout/lump-grid#readme"
+  "homepage": "https://github.com/tombout/lump-grid#readme",
+  "devDependencies": {
+    "sass-mq": "^5.0.0"
+  }
 }
