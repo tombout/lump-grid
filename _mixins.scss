@@ -1,0 +1,29 @@
+@mixin flex-column($grow, $shrink, $basis, $max-width) {
+  flex: $grow $shrink $basis;
+  max-width: $max-width;
+}
+
+@mixin create-equal-width-column($infix: null) {
+  $className: if($infix, '.col-#{$infix}', '.col');
+  #{$className} {
+    @include flex-column(1, 0, 0, 100%);
+  }
+}
+
+@mixin create-auto-width-column($infix: null) {
+  $className: if($infix, '.col-#{$infix}-auto', '.col-auto');
+  #{$className} {
+    @include flex-column(0, 0, auto, none);
+    width: auto;
+  }
+}
+
+@mixin create-numbered-columns($columns, $infix: null) {
+  $className: if($infix, '.col-#{$infix}-', '.col-');
+  @for $i from 1 through $columns {
+    #{$className}#{$i} {
+      $max-col-width: percentage($i / $columns);
+      @include flex-column(0, 0, $max-col-width, $max-col-width);
+    }
+  }
+}
