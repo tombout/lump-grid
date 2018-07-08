@@ -17,6 +17,10 @@ $breakpoint-min-widths: (
   width: 100%;
 }
 
+.row > * {
+  box-sizing: border-box;
+}
+
 [class*="col"] {
   position: relative;
   width: 100%;
