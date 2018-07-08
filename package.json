@@ -1,0 +1,24 @@
+{
+  "name": "lump-grid",
+  "version": "1.0.0",
+  "description": "CSS Grid Module",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"WARN: Tests not yet implemented!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tombout/lump-grid.git"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "grid"
+  ],
+  "author": "Thomas Schmitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tombout/lump-grid/issues"
+  },
+  "homepage": "https://github.com/tombout/lump-grid#readme"
+}
