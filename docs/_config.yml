@@ -1,1 +1,5 @@
+title: Lump Grid
+description: Tiny CSS Grid Classes
 theme: jekyll-theme-minimal
+sass:
+  sass_dir: _sass
